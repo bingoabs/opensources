@@ -1,0 +1,14 @@
+sudo: false
+language: elixir
+elixir:
+  - 1.6
+  - 1.7
+otp_release:
+  - 20.2
+  - 21.0
+script:
+  - "mix format --check-formatted --dry-run"
+  - "MIX_ENV=test mix do deps.get, test"
+notifications:
+  recipients:
+    - paulschoenfelder@gmail.com
